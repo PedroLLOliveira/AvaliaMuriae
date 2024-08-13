@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # >>> libs utilizadas
     'rest_framework',
-    # 'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
     'corsheaders',
     
-    # >>> modelos do banco de dados 
+    # >>> modelos do banco de dados
+    'administrator',
 ]
 
 MIDDLEWARE = [
