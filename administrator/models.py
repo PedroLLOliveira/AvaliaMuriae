@@ -27,8 +27,8 @@ class Administrator(Standard):
   )
   sector = models.CharField(
     'Setor',
-    max_length=10,
-    choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Other')],
+    max_length=30,
+    choices=[('PROJETOS E INOVACAO', 'Projetos e Inovação'),],
     null=True,
     blank=True
   )
