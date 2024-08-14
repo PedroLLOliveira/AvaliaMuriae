@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # >>> modelos do banco de dados
     'administrator',
     'school',
+    'teacher',
 ]
 
 MIDDLEWARE = [
