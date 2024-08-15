@@ -21,7 +21,7 @@ teacher_detail = TeacherViewSet.as_view({
 urlpatterns = [
     path('teacher/', teacher_list, name='teacher-list'),
     path('teacher/<str:pk>/', teacher_detail, name='teacher-detail'),
-    path('register/', RegisterTeacherView.as_view(), name='register'),
-    path('token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('register/teacher/', RegisterTeacherView.as_view(), name='register'),
+    path('login/teacher/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('teacher/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
   QuestionViewSet,
   TestAnswerSheetViewSet,
-  SchoolTestViewSet
+  SchoolTestViewSet,
+  StudentResponseViewSet
 )
 
 question_list = QuestionViewSet.as_view({
@@ -20,6 +21,16 @@ testanswersheet_list = TestAnswerSheetViewSet.as_view({
     'post': 'create'
 })
 testanswersheet_detail = TestAnswerSheetViewSet.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+})
+studentresponse_list = StudentResponseViewSet.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+studentresponse_detail = StudentResponseViewSet.as_view({
     'get': 'retrieve',
     'put': 'update',
     'patch': 'partial_update',
@@ -44,4 +55,6 @@ urlpatterns = [
     path('testanswersheet/<str:pk>/', testanswersheet_detail, name='testanswersheet-detail'),
     path('schooltest/', schooltest_list, name='schooltest-list'),
     path('schooltest/<str:pk>/', schooltest_detail, name='schooltest-detail'),
+    path('studentresponse/', studentresponse_list, name='studentresponse-list'),
+    path('studentresponse/<str:pk>/', studentresponse_detail, name='studentresponse-detail'),
 ]

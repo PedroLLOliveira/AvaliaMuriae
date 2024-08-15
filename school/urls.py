@@ -29,6 +29,6 @@ classRoom_detail = ClassRoomViewSet.as_view({
 urlpatterns = [
     path('school/', school_list, name='school-list'),
     path('school/<str:pk>/', school_detail, name='school-detail'),
-    path('classRoom/', classRoom_list, name='classRoom-list'),
-    path('classRoom/<str:pk>/', classRoom_detail, name='classRoom-detail'),
+    path('classroom/', classRoom_list, name='classRoom-list'),
+    path('classroom/<str:pk>/', classRoom_detail, name='classRoom-detail'),
 ]

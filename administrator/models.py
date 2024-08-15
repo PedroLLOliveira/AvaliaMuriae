@@ -21,7 +21,7 @@ class Administrator(Standard):
         __str__(): Retorna o nome completo do administrador, combinando o primeiro
             e o último nome do usuário vinculado.
   """
-  user = models.OneToOneField(
+  user = models.ForeignKey(
       User,
       on_delete=models.DO_NOTHING
   )

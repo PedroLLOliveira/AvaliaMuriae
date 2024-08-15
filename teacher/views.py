@@ -3,7 +3,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import Teacher
-from .serializers import TeacherSerializer, CustomTeacherTokenObtainPairSerializer
+from .serializers import (
+    TeacherSerializer,
+    TeacherSerializerDetail,
+    CustomTeacherTokenObtainPairSerializer
+)
 
 class TeacherViewSet(viewsets.ModelViewSet):
     """
@@ -23,6 +27,12 @@ class TeacherViewSet(viewsets.ModelViewSet):
     queryset = Teacher.objects.all()
     serializer_class = TeacherSerializer
     permission_classes = [permissions.IsAuthenticated]
+    
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return TeacherSerializerDetail
+        else:
+            return TeacherSerializer
 
 
 class RegisterTeacherView(APIView):
@@ -39,7 +49,6 @@ class RegisterTeacherView(APIView):
             com os dados do professor criado ou os erros de validação.
     """
     permission_classes = [permissions.AllowAny]
-
     def post(self, request, *args, **kwargs):
         serializer = TeacherSerializer(data=request.data)
         if serializer.is_valid():

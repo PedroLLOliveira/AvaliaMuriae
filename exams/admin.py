@@ -1,12 +1,12 @@
 from django.contrib import admin
 from .models import (
-  Question,
+  QuestionTest,
   TestAnswerSheet,
   SchoolTest
 )
 
 
-@admin.register(Question)
+@admin.register(QuestionTest)
 class QuestionAdmin(admin.ModelAdmin):
   list_display = [
     'hexadecimal',

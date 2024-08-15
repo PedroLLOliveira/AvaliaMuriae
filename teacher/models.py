@@ -29,7 +29,7 @@ class Teacher(Standard):
         __str__(): Retorna o nome completo do professor baseado nos atributos `first_name` e `last_name`
             do usuário associado.
   """
-  user = models.OneToOneField(
+  user = models.ForeignKey(
     User,
     on_delete=models.DO_NOTHING
   )
